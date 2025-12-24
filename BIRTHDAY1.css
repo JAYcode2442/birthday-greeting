@@ -1,0 +1,539 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 30px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #FF6B8B;
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #FF6B8B;
+    margin-bottom: 10px;
+}
+
+header h1 i {
+    margin-right: 15px;
+    color: #FDCB6E;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 300;
+}
+
+/* Greeting Card */
+.greeting-card {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Present Container */
+.present-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.present {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+}
+
+.present:hover {
+    transform: scale(1.05);
+}
+
+.present-box {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 0;
+    left: 25px;
+}
+
+.box-bottom {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    bottom: 0;
+    background-color: #FF6B8B;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.box-top {
+    position: absolute;
+    width: 105%;
+    height: 30%;
+    top: 0;
+    left: -2.5%;
+    background-color: #ff4d6d;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    transform-origin: bottom;
+    transition: transform 1s;
+}
+
+.ribbon-vertical {
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    background-color: #4ECDC4;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.ribbon-horizontal {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background-color: #4ECDC4;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.bow {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.bow-center {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #4ECDC4;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bow-loop {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 15px solid #4ECDC4;
+    border-radius: 50%;
+    top: 5px;
+}
+
+.bow-loop.left {
+    left: -30px;
+    border-right: none;
+    border-top: none;
+}
+
+.bow-loop.right {
+    right: -30px;
+    border-left: none;
+    border-top: none;
+}
+
+.present-shadow {
+    position: absolute;
+    width: 120px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    bottom: -10px;
+    left: 40px;
+    filter: blur(5px);
+}
+
+.instruction {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.instruction i {
+    color: #FF6B8B;
+    margin-right: 8px;
+}
+
+/* Message Container */
+.message-container {
+    display: none;
+    animation: fadeIn 0.8s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message-card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    border-left: 5px solid #FF6B8B;
+}
+
+.message-card h2 {
+    color: #FF6B8B;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.message-card h2 i {
+    margin-right: 15px;
+    color: #FDCB6E;
+}
+
+.message-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.message-footer {
+    text-align: right;
+    font-style: italic;
+    color: #777;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+}
+
+.signature {
+    font-weight: 600;
+    color: #FF6B8B;
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.close-btn {
+    display: block;
+    margin: 20px auto 0;
+    background-color: #6C5CE7;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.close-btn:hover {
+    background-color: #5b4fcf;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+}
+
+.close-btn i {
+    margin-right: 8px;
+}
+
+/* Controls */
+.controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.control-group {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.control-group h3 {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.control-group h3 i {
+    margin-right: 10px;
+    color: #FF6B8B;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #666;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #FF6B8B;
+    outline: none;
+}
+
+.update-btn, .reset-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.update-btn {
+    background-color: #00B894;
+    color: white;
+}
+
+.update-btn:hover {
+    background-color: #00a085;
+    transform: translateY(-3px);
+}
+
+.reset-btn {
+    background-color: #FDCB6E;
+    color: #333;
+    margin-top: 15px;
+}
+
+.reset-btn:hover {
+    background-color: #f7c152;
+    transform: translateY(-3px);
+}
+
+.update-btn i, .reset-btn i {
+    margin-right: 8px;
+}
+
+/* Color Options */
+.color-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s;
+}
+
+.color-option.active {
+    border-color: #333;
+    transform: scale(1.1);
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+/* Birthday Wishes */
+.birthday-wishes {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.birthday-wishes h3 {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.birthday-wishes h3 i {
+    margin-right: 10px;
+    color: #FF6B8B;
+}
+
+.wishes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.wish {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    font-style: italic;
+    border-left: 3px solid #FDCB6E;
+}
+
+.wish:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-left-color: #FF6B8B;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+footer i {
+    color: #FF6B8B;
+    margin: 0 5px;
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* Confetti */
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #FF6B8B;
+    border-radius: 50%;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(500px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2.8rem;
+    }
+    
+    .controls {
+        grid-template-columns: 1fr;
+    }
+    
+    .wishes-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .present {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .present-box {
+        width: 130px;
+        height: 130px;
+        left: 25px;
+    }
+    
+    .message-card h2 {
+        font-size: 2rem;
+    }
+}

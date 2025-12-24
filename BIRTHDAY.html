@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Greeting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="BIRTHDAY1.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-birthday-cake"></i> Happy Birthday!</h1>
+            <p class="subtitle">Click the present to reveal a special message</p>
+        </header>
+
+        <main>
+            <div class="greeting-card">
+                <div class="card-content">
+                    <div class="present-container">
+                        <!-- Birthday Present -->
+                        <div class="present" id="birthday-present">
+                            <div class="present-box">
+                                <div class="box-top" id="box-top"></div>
+                                <div class="box-bottom"></div>
+                                <div class="ribbon-vertical"></div>
+                                <div class="ribbon-horizontal"></div>
+                                <div class="bow">
+                                    <div class="bow-center"></div>
+                                    <div class="bow-loop left"></div>
+                                    <div class="bow-loop right"></div>
+                                </div>
+                            </div>
+                            <div class="present-shadow"></div>
+                        </div>
+
+                        <div class="instruction">
+                            <p><i class="fas fa-hand-pointer"></i> Click the present to open it!</p>
+                        </div>
+                    </div>
+
+                    <div class="message-container" id="message-container">
+                        <div class="message-card">
+                            <h2><i class="fas fa-gift"></i> Happy Birthday!</h2>
+                            <div class="message-content">
+                                <p id="birthday-message">HAPPPY BIRTHDAY PAR!!!! ENJOY YOUR BIGGEST MOMENT OF YOUR LIFE AND I WISH FOR YOU IS TO KEEP SAFE AND MAKE YOUR DREAM COME TRUE YUN LANG HAPPY BIRTHDAY!!!!</p>
+                                <div class="message-footer">
+                                    <p>With FRIEND,</p>
+                                    <p class="signature">PRINCESS KATE RAMA</p>
+                                </div>
+                            </div>
+                            <div class="confetti-container" id="confetti-container"></div>
+                        </div>
+                        <button class="close-btn" id="close-message">
+                            <i class="fas fa-times"></i> Close Message
+                        </button>
+                    </div>
+
+                    <div class="controls">
+                        <div class="control-group">
+                            <h3><i class="fas fa-user-edit"></i> Personalize Message</h3>
+                            <div class="input-group">
+                                <label for="recipient">Recipient's Name:</label>
+                                <input type="text" id="recipient" placeholder="Enter name" value="Friend">
+                            </div>
+                            <div class="input-group">
+                                <label for="message">Birthday Message:</label>
+                                <textarea id="message" rows="3">HAPPPY BIRTHDAY PAR!!!! ENJOY YOUR BIGGEST MOMENT OF YOUR LIFE AND I WISH FOR YOU IS TO KEEP SAFE AND MAKE YOUR DREAM COME TRUE YUN LANG HAPPY BIRTHDAY!!!!</textarea>
+                            </div>
+                            <button class="update-btn" id="update-message">
+                                <i class="fas fa-sync-alt"></i> Update Message
+                            </button>
+                        </div>
+
+                        <div class="control-group">
+                            <h3><i class="fas fa-palette"></i> Present Colors</h3>
+                            <div class="color-options">
+                                <div class="color-option active" style="background-color: #FF6B8B;" data-box="#FF6B8B" data-ribbon="#4ECDC4"></div>
+                                <div class="color-option" style="background-color: #6C5CE7;" data-box="#6C5CE7" data-ribbon="#FFD700"></div>
+                                <div class="color-option" style="background-color: #00B894;" data-box="#00B894" data-ribbon="#FD79A8"></div>
+                                <div class="color-option" style="background-color: #FDCB6E;" data-box="#FDCB6E" data-ribbon="#6C5CE7"></div>
+                            </div>
+                            <button class="reset-btn" id="reset-present">
+                                <i class="fas fa-redo"></i> Reset Present
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="birthday-wishes">
+                <h3><i class="fas fa-quote-left"></i> Birthday Wishes</h3>
+                <div class="wishes-container">
+                    <div class="wish" data-wish="1">
+                        <p>"Hope your birthday is as amazing as you are!"</p>
+                    </div>
+                    <div class="wish" data-wish="2">
+                        <p>"Cheers to another year of wonderful you!"</p>
+                    </div>
+                    <div class="wish" data-wish="3">
+                        <p>"May all your birthday wishes come true!"</p>
+                    </div>
+                    <div class="wish" data-wish="4">
+                        <p>"Sending you smiles for every moment of your special day!"</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made with <i class="fas fa-heart"></i> for your special day</p>
+            <p class="hint">Refresh the page to start over</p>
+        </footer>
+    </div>
+
+    <audio id="birthday-audio" preload="auto">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="BIRTHDAY2.js"></script>
+</body>
+</html>
